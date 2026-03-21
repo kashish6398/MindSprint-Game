@@ -19,7 +19,7 @@ function Home() {
         animate={{ opacity: 1, y: 0 }}
         className="w-[92%] max-w-[420px] min-h-[50vh] sm:min-h-[55vh] 
                    flex flex-col justify-between
-                    px-5 pt-8 pb-6 sm:px-6 sm:pt-10 sm:pb-7 text-center z-10"
+                    px-5 pt-8 pb-6 sm:px-6 sm:pt-14 sm:pb-7 text-center z-10"
       >
 
         {/* 🔝 Top Section */}
@@ -28,13 +28,13 @@ function Home() {
           {/* Character */}
           <motion.img
             src="/character.png"
-            className="w-16 sm:w-20 md:w-24 mb-3"
+            className="w-16 sm:w-20 md:w-24 "
             animate={{ y: [0, -6, 0] }}
             transition={{ repeat: Infinity, duration: 1.2 }}
           />
 
           {/* Title */}
-          <h1 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-2">
+          <h1 className="text-3xl sm:text-3xl font-bold text-gray-800 mb-2">
             MindSprint
           </h1>
 
@@ -66,7 +66,7 @@ function Home() {
             onClick={() => navigate("/game")}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="mt-6 px-6 py-3 sm:px-8 sm:py-3 
+            className="mt-4 px-6 py-3 sm:px-8 sm:py-3 
                        rounded-xl bg-gradient-to-r 
                        from-green-400 to-emerald-500 
                        text-white font-semibold shadow-lg"
@@ -75,7 +75,7 @@ function Home() {
           </motion.button>
 
           {/* Footer */}
-          <p className="mt-4 text-xs text-gray-500">
+          <p className="mt-2 text-xs text-gray-500">
             Built with React + Motion
           </p>
         </div>

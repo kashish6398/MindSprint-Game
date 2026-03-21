@@ -162,7 +162,7 @@ function Game() {
       />
 
       {/* 🎯 CONTENT ON BOARD */}
-      <div className="absolute top-[28%] left-1/2 -translate-x-1/2 w-[80%] max-w-[400px] flex flex-col items-center">
+      <div className="absolute top-[27%] left-1/2 -translate-x-1/2 w-[80%] max-w-[400px] flex flex-col items-center">
 
         {/* ✏️ BOARD */}
         <div className="w-full px-6 py-2 rounded-2xl flex flex-col items-center">
@@ -176,16 +176,16 @@ function Game() {
           />
 
           {/* 🎮 Title */}
-          <h1 className="mb-2 sm:mb-1 text-3xl font-bold text-gray-800">
+          <h1 className="mb-2 sm:mb-1 text-xl font-bold text-gray-800">
             Level {level}
           </h1>
 
-          <p className="text-gray-600 text-xl mb-4 sm:mb-1">
+          <p className="text-gray-600 text-s mb-4 sm:mb-1">
             {isShowing ? "👀 Watch" : " Your Turn"}
           </p>
 
           {/* 📊 Score */}
-          <div className="flex gap-5 mb-4 px-4 py-2 rounded-lg border border-gray-300 bg-white text-lg">
+          <div className="flex gap-5 mb-4 px-2 py-1 rounded-lg border border-gray-300 bg-white text-lg">
             <div>
               <p className="text-sm">Score</p>
               <p className="font-bold">{score}</p>
@@ -197,7 +197,7 @@ function Game() {
           </div>
 
           {/* 🎮 Grid */}
-          <div className="grid grid-cols-3 sm:grid-cols-3 gap-2 sm:gap-4 ">
+          <div className="grid grid-cols-3 sm:grid-cols-3 gap-2 sm:gap-2 ">
             {cards.map((num) => (
               <motion.div
                 key={num}
@@ -210,7 +210,7 @@ function Game() {
                 }}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.85 }}
-                className="w-16 sm:w- h-16 sm:h-18 flex items-center justify-center rounded-lg bg-white border-2 border-gray-400 shadow font-bold cursor-pointer"
+                className="w-16 sm:w-16 h-14 sm:h-18 flex items-center justify-center rounded-lg bg-white border-2 border-gray-400 shadow font-bold cursor-pointer"
               >
                 {num}
               </motion.div>
@@ -232,12 +232,12 @@ function Game() {
 
           {/* ❌ Lose */}
           {status === "lose" && (
-            <div className="mt-3 text-center">
+            <div className="mt-2 text-center">
               <p className="text-red-500 font-bold text-sm">💀 Game Over</p>
 
               <button
                 onClick={restartGame}
-                className="mt-2 px-4 py-2 bg-red-400 text-white rounded-lg text-lg"
+                className="mt-1 px-4 py-1 bg-red-400 text-white rounded-lg text-sm"
               >
                 Restart
               </button>
@@ -251,7 +251,7 @@ function Game() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={() => generatePattern(level)}
-            className="mt-3 px-8 py-4 rounded-xl bg-gradient-to-r from-green-400 to-emerald-500 text-white font-semibold shadow-lg"
+            className="mt-2 px-6 py-2 rounded-xl bg-gradient-to-r from-green-400 to-emerald-500 text-white font-semibold shadow-lg"
           >
             Start Game
           </motion.button>
