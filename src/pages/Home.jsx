@@ -7,13 +7,13 @@ function Home() {
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
 
-      {/* 🌄 Background */}
+      {/* Background */}
       <img
         src="/bg.jpg"
         className="absolute inset-0 w-full h-full object-cover -z-10"
       />
 
-      {/* 🎯 Main Card */}
+      {/* Main Card */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
@@ -22,7 +22,7 @@ function Home() {
                     px-5 pt-8 pb-6 sm:px-6 sm:pt-14 sm:pb-7 text-center z-10"
       >
 
-        {/* 🔝 Top Section */}
+        {/* Top Section */}
         <div className="flex flex-col items-center mt-3 sm:mt-5">
 
           {/* Character */}
@@ -51,14 +51,14 @@ function Home() {
           </div>
         </div>
 
-        {/* 🔽 Middle Section (NEW - fills gap nicely) */}
+        {/*  Middle Section (NEW - fills gap nicely) */}
         <div className="text-gray-700 text-sm sm:text-base space-y-2">
-          <p>🧠 Improve focus & memory</p>
-          <p>⚡ Test your reaction speed</p>
-          <p>🏆 Beat your high score</p>
+          <p> Improve focus & memory</p>
+          <p> Test your reaction speed</p>
+          <p> Beat your high score</p>
         </div>
 
-        {/* 🔻 Bottom Section */}
+        {/*  Bottom Section */}
         <div className="flex flex-col items-center">
 
           {/* Start Button */}

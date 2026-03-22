@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import confetti from "canvas-confetti";
 
-// 🎵 Sounds
+// Sounds
 let clickSound, winSound, loseSound;
 
 if (typeof window !== "undefined") {
@@ -11,7 +11,7 @@ if (typeof window !== "undefined") {
   loseSound = new Audio("/sounds/lose.mp3");
 }
 
-// 🔊 Sound handler
+// Sound handler
 const playSound = (sound, duration = 500) => {
   if (!sound) return;
 
@@ -40,7 +40,7 @@ function Game() {
 
   const cards = [1, 2, 3, 4, 5, 6];
 
-  // 🎯 Pattern
+  // Pattern
   const generatePattern = (lvl) => {
     const newPattern = Array.from({ length: lvl + 2 }, () =>
       Math.floor(Math.random() * 6) + 1
@@ -53,7 +53,7 @@ function Game() {
     showPattern(newPattern);
   };
 
-  // 🎬 Show pattern
+  // Show pattern
   const showPattern = async (patternArr) => {
     setIsShowing(true);
 
@@ -67,7 +67,7 @@ function Game() {
     setIsShowing(false);
   };
 
-  // ⏱ Timer
+  // Timer
   useEffect(() => {
     if (status === "playing" && !isShowing) {
       const timer = setInterval(() => {
@@ -85,7 +85,7 @@ function Game() {
     }
   }, [status, isShowing]);
 
-  // 🎉 Confetti
+  // Confetti
   const fireConfetti = () => {
     const end = Date.now() + 800;
 
@@ -108,7 +108,7 @@ function Game() {
     })();
   };
 
-  // 🖱 Click
+  // Click
   const handleClick = (num) => {
     if (isShowing || status !== "playing") return;
 
@@ -143,7 +143,7 @@ function Game() {
     }
   };
 
-  // 🔄 Restart
+  // Restart
   const restartGame = () => {
     setLevel(1);
     setScore(0);
@@ -155,19 +155,19 @@ function Game() {
   return (
     <div className="relative min-h-screen overflow-hidden">
 
-      {/* 🌄 Background Image */}
+      {/* Background Image */}
       <img
         src="/bg.jpg"
         className="absolute inset-0 w-full h-full object-cover"
       />
 
-      {/* 🎯 CONTENT ON BOARD */}
+      {/* CONTENT ON BOARD */}
       <div className="absolute top-[27%] left-1/2 -translate-x-1/2 w-[80%] max-w-[400px] flex flex-col items-center">
 
-        {/* ✏️ BOARD */}
+        {/* BOARD */}
         <div className="w-full px-6 py-2 rounded-2xl flex flex-col items-center">
 
-          {/* 👤 Character */}
+          {/* Character */}
           <motion.img
             src="/character.png"
             className="w-16 sm:w-20 md:w-24 drop-shadow-lg"
@@ -175,7 +175,7 @@ function Game() {
             transition={{ repeat: Infinity, duration: 1.2 }}
           />
 
-          {/* 🎮 Title */}
+          {/* Title */}
           <h1 className="mb-2 sm:mb-1 text-xl font-bold text-gray-800">
             Level {level}
           </h1>
@@ -184,7 +184,7 @@ function Game() {
             {isShowing ? "👀 Watch" : " Your Turn"}
           </p>
 
-          {/* 📊 Score */}
+          {/* Score */}
           <div className="flex gap-5 mb-4 px-2 py-1 rounded-lg border border-gray-300 bg-white text-lg">
             <div>
               <p className="text-sm">Score</p>
@@ -196,7 +196,7 @@ function Game() {
             </div>
           </div>
 
-          {/* 🎮 Grid */}
+          {/* Grid */}
           <div className="grid grid-cols-3 sm:grid-cols-3 gap-2 sm:gap-2 ">
             {cards.map((num) => (
               <motion.div
@@ -217,7 +217,7 @@ function Game() {
             ))}
           </div>
 
-          {/* 🎉 Win */}
+          {/* Win */}
           <AnimatePresence>
             {status === "win" && (
               <motion.div
@@ -230,7 +230,7 @@ function Game() {
             )}
           </AnimatePresence>
 
-          {/* ❌ Lose */}
+          {/* Lose */}
           {status === "lose" && (
             <div className="mt-2 text-center">
               <p className="text-red-500 font-bold text-sm">💀 Game Over</p>
@@ -245,7 +245,7 @@ function Game() {
           )}
         </div>
 
-        {/* 🚀 START BUTTON (OUTSIDE BOARD) */}
+        {/* START BUTTON (OUTSIDE BOARD) */}
         {status === "idle" && (
           <motion.button
             whileHover={{ scale: 1.1 }}
